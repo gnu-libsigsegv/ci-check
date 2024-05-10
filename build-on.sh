@@ -30,6 +30,9 @@ packagedir=`echo "$tarfile" | sed -e 's/\.tar\.gz$//'`
 tar xfz "$tarfile"
 cd "$packagedir" || exit 1
 
+mkdir build
+cd build
+
 # Configure.
 ./configure --config-cache $configure_options > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
 
@@ -38,3 +41,5 @@ $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
 
 # Run the tests.
 $make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
+
+cd ..
