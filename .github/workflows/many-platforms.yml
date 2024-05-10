@@ -40,7 +40,7 @@ on:
 
 # Variables.
 env:
-  package: xxxxxxxx
+  package: libsigsegv
 
 jobs:
   build-tarball:
@@ -525,6 +525,9 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
+        # This package is not yet supported on 64-bit native Windows.
+        exclude:
+          - bitness: 64
     runs-on: windows-2022
     defaults:
       run:
@@ -590,6 +593,9 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
+        # This package is not yet supported on 64-bit native Windows.
+        exclude:
+          - bitness: 64
     runs-on: windows-2022
     defaults:
       run:
