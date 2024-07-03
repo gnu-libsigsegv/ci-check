@@ -142,6 +142,9 @@ jobs:
             pwd
             ls -l /etc/yum.repos.d
             echo '================================================'; cat /etc/yum.repos.d/CentOS-Base.repo; echo '================================================'
+            : "The CentOS packages repository has moved on 2024-07-01."
+            sed -i -e 's|^mirrorlist=|#mirrorlist=|' -e 's|^#baseurl=http://mirror\.centos\.org|baseurl=http://vault.centos.org|' /etc/yum.repos.d/CentOS-Base.repo
+            cat /etc/yum.repos.d/CentOS-Base.repo; echo '================================================'
             : "Install CentOS Linux packages"
             : "List of packages: http://mirror.centos.org/centos/7/os/x86_64/Packages/"
             yum -y install make gcc
