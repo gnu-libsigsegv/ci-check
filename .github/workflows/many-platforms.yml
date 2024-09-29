@@ -461,7 +461,7 @@ jobs:
           #prepare: |
           #  : "Install Solaris packages"
           #  : "List of packages: http://pkg.oracle.com/solaris/release/en/index.shtml"
-          #  pkg install ...
+          #  pkg install ...; ret=$?; test $ret = 0 || test $ret = 4
           run: |
             set -x
             uname -a
@@ -831,7 +831,7 @@ jobs:
             pwd
             : "Install Debian packages."
             : "List of packages: https://packages.debian.org/"
-            : "apt update; apt install ..."
+            : "apt update; apt -y install ..."
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
