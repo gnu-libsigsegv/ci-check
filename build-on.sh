@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024-2025 Free Software Foundation, Inc.
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -24,6 +24,11 @@ make="$3"
 
 set -x
 
+case "$configure_options" in
+  --host=riscv*) cross_compiling=true ;;
+  *)             cross_compiling=false ;;
+esac
+
 # Unpack the tarball.
 tarfile=`echo "$package"-*.tar.gz`
 packagedir=`echo "$tarfile" | sed -e 's/\.tar\.gz$//'`
@@ -39,7 +44,9 @@ cd build
 # Build.
 $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
 
-# Run the tests.
-$make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
+if ! $cross_compiling; then
+  # Run the tests.
+  $make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
+fi
 
 cd ..
