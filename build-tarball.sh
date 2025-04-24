@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024-2025 Free Software Foundation, Inc.
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -24,7 +24,7 @@ package="$1"
 set -e
 
 # Fetch sources (uses package 'git').
-git clone --depth 1 https://git.savannah.gnu.org/git/"$package".git
+git clone --depth 1 https://https.git.savannah.gnu.org/git/"$package".git
 cd "$package"
 ./autopull.sh --one-time
 
