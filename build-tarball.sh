@@ -23,14 +23,10 @@ package="$1"
 
 set -e
 
-# Improve efficiency of checkout of git subcheckouts.
-git config --global url.git://git.savannah.gnu.org/.insteadof git://git.git.savannah.gnu.org/
-git config --global url.https://git.savannah.gnu.org/git/.insteadof https://https.git.savannah.gnu.org/git/
-git config --global url.git://git.savannah.gnu.org/gnulib.git.insteadof https://github.com/coreutils/gnulib.git
-git config --global url.https://git.savannah.gnu.org/git/gnulib.git.insteadof https://github.com/coreutils/gnulib.git
+. ./init-git.sh
 
 # Fetch sources (uses package 'git').
-git clone --depth 1 https://https.git.savannah.gnu.org/git/"$package".git
+git clone --depth 1 https://git.savannah.gnu.org/git/"$package".git
 cd "$package"
 ./autopull.sh --one-time
 
