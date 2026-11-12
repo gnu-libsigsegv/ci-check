@@ -71,6 +71,7 @@ jobs:
             ${{ env.package }}/config.status
             ${{ env.package }}/log[1234]
             ${{ env.package }}/tests/test-suite.log
+            ${{ env.package }}/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
@@ -120,6 +121,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-linux-gnu-centos:
@@ -164,6 +166,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-linux-gnu-alma:
@@ -210,6 +213,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-linux-alpine:
@@ -252,6 +256,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-macos:
@@ -294,6 +299,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-freebsd:
@@ -341,6 +347,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-netbsd:
@@ -389,6 +396,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-openbsd:
@@ -439,6 +447,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-solaris11:
@@ -487,6 +496,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-solaris11-omnios:
@@ -533,6 +543,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-cygwin:
@@ -595,6 +606,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-mingw:
@@ -660,6 +672,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-msvc:
@@ -760,6 +773,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   check-msys2:
@@ -837,6 +851,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   # This is not a platform-specific test, but very useful for finding bugs.
@@ -878,6 +893,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   # This is not a platform-specific test, but very useful for finding ISO C23 compliance bugs.
@@ -924,6 +940,7 @@ jobs:
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[12345]
             ${{ env.package }}-*/build/tests/test-suite.log
+            ${{ env.package }}-*/build/tests/test-catch-*.log
           retention-days: 28
           overwrite: true
   # This is not a platform-specific test, but very useful for finding cross-compilation bugs.
