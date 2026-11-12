@@ -605,9 +605,6 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
-        # This package is not yet supported on 64-bit native Windows.
-        exclude:
-          - bitness: 64
     runs-on: windows-2022
     defaults:
       run:
@@ -673,9 +670,6 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
-        # This package is not yet supported on 64-bit native Windows.
-        exclude:
-          - bitness: 64
     runs-on: windows-2022
     defaults:
       run:
@@ -770,8 +764,6 @@ jobs:
           overwrite: true
   check-msys2:
     name: make check on mingw
-    # This package is not yet supported on 64-bit native Windows.
-    if: ${{ false }}
     needs: build-tarball
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
